@@ -1,64 +1,10 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-<title>1_Introduction slides</title>
+<head><meta charset="utf-8" />
+<title>1_Introduction</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-<!-- General and theme style sheets -->
-<link rel="stylesheet" href="reveal.js/css/reveal.css">
-<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
-
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'reveal.js/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-}
-
-</script>
-
-<!--[if lt IE 9]>
-<script src="reveal.js/lib/js/html5shiv.js"></script>
-<![endif]-->
-
-<!-- Loading the mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration -->
-
-<!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -11743,86 +11689,97 @@ ul.typeahead-list > li > a {
 
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
-.reveal {
-  font-size: 160%;
-  overflow-y: scroll;
+body {
+  overflow: visible;
+  padding: 8px;
 }
-.reveal pre {
-  width: inherit;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
 }
-.reveal pre code {
-  padding: 0px;
-}
-.reveal section img {
-  border: 0px solid black;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-}
-.reveal i {
-  font-style: normal;
-  font-family: FontAwesome;
-  font-size: 2em;
-}
-.reveal .slides {
-  text-align: left;
-}
-.reveal.fade {
-  opacity: 1;
-}
-.reveal .progress {
-  position: static;
-}
-div.input_area {
-  padding: 0.06em;
-}
-div.code_cell {
-  background-color: transparent;
-}
-div.prompt {
-  width: 11ex;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  text-align: right;
-}
-div.output_area pre {
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-}
-div.output_prompt {
-  /* 5px right shift to account for margin in parent container */
-  margin: 5px 5px 0 0;
-}
-div.text_cell.rendered .rendered_html {
-  /* The H1 height seems miscalculated, we are just hidding the scrollbar */
-  overflow-y: hidden;
-}
-a.anchor-link {
-  /* There is still an anchor, we are only hidding it */
-  display: none;
-}
-.rendered_html p {
-  text-align: inherit;
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
 }
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
 <link rel="stylesheet" href="custom.css">
 
-</head>
-
-
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">notebook.services.config</span> <span class="kn">import</span> <span class="n">ConfigManager</span>
+<span class="kn">from</span> <span class="nn">IPython.paths</span> <span class="kn">import</span> <span class="n">locate_profile</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">ConfigManager</span><span class="p">(</span><span class="n">profile_dir</span><span class="o">=</span><span class="n">locate_profile</span><span class="p">(</span><span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">profile</span><span class="p">))</span>
+<span class="n">cm</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s">&#39;livereveal&#39;</span><span class="p">,</span> <span class="p">{</span>
+              <span class="s">&#39;theme&#39;</span><span class="p">:</span> <span class="s">&#39;blood&#39;</span><span class="p">,</span>
+              <span class="s">&#39;transition&#39;</span><span class="p">:</span> <span class="s">&#39;zoom&#39;</span><span class="p">,</span>
+              <span class="s">&#39;start_slideshow_at&#39;</span><span class="p">:</span> <span class="s">&#39;selected&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
 
 
-<div class="reveal">
-<div class="slides">
-<section><section>
+<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{u&#39;start_slideshow_at&#39;: &#39;selected&#39;, u&#39;theme&#39;: &#39;blood&#39;, u&#39;transition&#39;: &#39;zoom&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11831,7 +11788,7 @@ a.anchor-link {
 <h1 id="Computational-Thinking">Computational Thinking<a class="anchor-link" href="#Computational-Thinking">&#182;</a></h1><h2 id="Dr.-Christopher-Gwilliams">Dr. Christopher Gwilliams<a class="anchor-link" href="#Dr.-Christopher-Gwilliams">&#182;</a></h2><h3 id="gwilliamsc@cardiff.ac.uk">gwilliamsc@cardiff.ac.uk<a class="anchor-link" href="#gwilliamsc@cardiff.ac.uk">&#182;</a></h3>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11847,7 +11804,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11860,50 +11817,17 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 <li>Operators &amp; Conditionals</li>
 <li>Flow Control</li>
 <li>Data Structures</li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Course-Overview">Course Overview<a class="anchor-link" href="#Course-Overview">&#182;</a></h1><ul>
-<li>Loops and Functions</li>
-<li>Methods and Classes</li>
+<li>Loops</li>
+<li>Methods</li>
 <li>Input/Output</li>
 <li>Maths &amp; Binary Arithmetic</li>
-<li>Sorting algorithms and problem decomposition</li>
+<li>Sorting Algorithms</li>
 <li>Python in the Web</li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Course-Breakdown">Course Breakdown<a class="anchor-link" href="#Course-Breakdown">&#182;</a></h1><h3 id="Coursework---Week-3">Coursework - Week 3<a class="anchor-link" href="#Coursework---Week-3">&#182;</a></h3><p>Coding exercise with report (60%)</p>
-<h3 id="Exam-(1hr)-January">Exam (1hr) January<a class="anchor-link" href="#Exam-(1hr)-January">&#182;</a></h3><p>Theory based written exam (40%)</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="What-Is-This-Not?">What Is This Not?<a class="anchor-link" href="#What-Is-This-Not?">&#182;</a></h1><p>This is not a quick course to learn Python. First and foremost, this is Computational Thinking through the medium of Python.</p>
-<p>This could (almost) as easily be taught using any language. There will be much more to learn about Python after this course but you will be better equipped to learn it.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11912,7 +11836,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 <h1 id="Intro-to-Python">Intro to Python<a class="anchor-link" href="#Intro-to-Python">&#182;</a></h1>
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
@@ -11941,7 +11865,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 </div>
 </div>
 
-</div></div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11958,7 +11882,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11975,7 +11899,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 
 </div>
 </div>
-</div></section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11985,7 +11909,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 <h3 id="Benevolent-Dictator-for-Life">Benevolent Dictator for Life<a class="anchor-link" href="#Benevolent-Dictator-for-Life">&#182;</a></h3>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12007,7 +11931,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12016,7 +11940,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 <h1 id="Python-2-vs.-Python-3">Python 2 vs. Python 3<a class="anchor-link" href="#Python-2-vs.-Python-3">&#182;</a></h1>
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12030,7 +11954,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12045,7 +11969,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12062,7 +11986,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12080,7 +12004,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12096,7 +12020,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12109,7 +12033,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
@@ -12139,7 +12063,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 </div>
 </div>
 
-</div></div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12148,7 +12072,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 <h1 id="REPL">REPL<a class="anchor-link" href="#REPL">&#182;</a></h1><h3 id="What-does-this-stand-for?">What does this stand for?<a class="anchor-link" href="#What-does-this-stand-for?">&#182;</a></h3>
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12158,7 +12082,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12171,7 +12095,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
@@ -12203,7 +12127,7 @@ Problem solving by you, or a machine, in a way that is simple to reproduce</p>
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
@@ -12233,7 +12157,7 @@ bloop
 </div>
 </div>
 
-</div></div></section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12246,7 +12170,7 @@ bloop
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12257,7 +12181,7 @@ bloop
 
 </div>
 </div>
-</div></section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12273,14 +12197,14 @@ bloop
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercise:-Python-Scripts">Exercise: Python Scripts<a class="anchor-link" href="#Exercise:-Python-Scripts">&#182;</a></h3><ul>
-<li>Open up a text editor (atom)</li>
+<h1 id="Python-Scripts">Python Scripts<a class="anchor-link" href="#Python-Scripts">&#182;</a></h1><ul>
+<li>Open up a text editor</li>
 <li>Type <code>print("hello, world")</code></li>
 <li>Save the file as <code>hello.py</code></li>
 <li>In your command prompt, run it by typing <code>python hello.py</code> in the directory it was saved in</li>
@@ -12289,7 +12213,7 @@ bloop
 
 </div>
 </div>
-</div></section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12304,7 +12228,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12318,7 +12242,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div></section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12334,7 +12258,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div></section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12344,7 +12268,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12355,7 +12279,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12366,7 +12290,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12382,7 +12306,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12392,7 +12316,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12402,7 +12326,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
@@ -12416,7 +12340,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12429,7 +12353,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div></div></section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12441,7 +12365,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12452,7 +12376,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12463,7 +12387,7 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12480,63 +12404,8 @@ Scripts (or files) will not do this unless you tell it to.</p>
 
 </div>
 </div>
-</div></section></section>
 </div>
-</div>
-
-<script>
-
-require(
-    {
-      // it makes sense to wait a little bit when you are loading
-      // reveal from a cdn in a slow connection environment
-      waitSeconds: 15
-    },
-    [
-      "reveal.js/lib/js/head.min.js",
-      "reveal.js/js/reveal.js"
-    ],
-
-    function(head, Reveal){
-
-        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-
-            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
-
-            // Optional libraries used to extend on reveal.js
-            dependencies: [
-                { src: "reveal.js/lib/js/classList.js",
-                  condition: function() { return !document.body.classList; } },
-                { src: "reveal.js/plugin/notes/notes.js",
-                  async: true,
-                  condition: function() { return !!document.body.classList; } }
-            ]
-        });
-
-        var update = function(event){
-          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
-            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
-          }
-        };
-
-        Reveal.addEventListener('slidechanged', update);
-
-        var update_scroll = function(event){
-          $(".reveal").scrollTop(0);
-        };
-
-        Reveal.addEventListener('slidechanged', update_scroll);
-
-    }
-);
-</script>
-
+    </div>
+  </div>
 </body>
-
-
 </html>
